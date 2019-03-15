@@ -16,6 +16,9 @@
 #include <set>
 #include <queue>
 #include <list>
+#include <deque>
+#include <stack>
+#include <functional>
 using namespace std;
 
 #ifndef DEBUG
