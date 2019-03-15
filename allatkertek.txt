@@ -1,0 +1,13 @@
+4
+kecske 12
+nyul 41
+lo 8
+liba 76
+5
+kecske 8
+pulyka 16
+szamar 1
+lo 4
+liba 60
+6
+12
