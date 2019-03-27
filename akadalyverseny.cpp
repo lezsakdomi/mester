@@ -44,6 +44,7 @@ int main()
         while (bad) {
             v[pos]++;
             if (v[pos]==n) break;
+            if ( pos>1 && ( (v[pos-2]<v[pos-1]) == (v[pos-1]<v[pos-0]) ) ) continue;
             bad=false;
             fe(i, 0, pos){ // should not trigger if v[pos]==n
                 if (v[pos]==v[i]) {
