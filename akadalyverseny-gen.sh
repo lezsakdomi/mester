@@ -1,5 +1,8 @@
 #!/bin/bash
-cat <<CPP
+
+jam akadalyverseny >&2
+
+cat >>akadalyverseny-gen.cpp <<CPP
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -11,9 +14,9 @@ int main() {
     switch (n) {
 CPP
 
-for i in {1..24}; do
+for i in {1..23}; do
     echo "Generating $i..." >&2
-    cat <<CPP
+    cat >>akadalyverseny-gen.cpp <<CPP
         case $i:
             cout << `echo $i | ./akadalyverseny 2>/dev/null` << endl;
             return 0;
@@ -21,10 +24,12 @@ for i in {1..24}; do
 CPP
 done
 
-cat <<CPP
+cat >>akadalyverseny-gen.cpp <<CPP
         default:
             cerr << "Out of range :(" << endl;
             return 1;
     }
 }
 CPP
+
+make akadalyverseny-gen
