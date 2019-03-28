@@ -13,12 +13,17 @@ using namespace std;
 
 int i, j, k, l, m, n, o, p, x, y, z, a, b, c;
 vector<int> v;
+vector<bool> status;
 
 int main()
 {
     cin>>n;
     v.resize(n+1);
     fe(i, 0, n) v[i]=i;
+
+    status.resize(n, true);
+    status.push_back(false);
+
     int pos=n;
     int cnt=0;
     while(pos>=0){
@@ -40,23 +45,24 @@ int main()
             continue;
         }
 
-        bool bad=true; // trigger at least one run
-        while (bad) {
+	if (v[pos]!=-1) status[v[pos]] = false;
+
+        while (true) { // testing after increment
             v[pos]++;
             if (v[pos]==n) break;
             if ( pos>1 && ( (v[pos-2]<v[pos-1]) == (v[pos-1]<v[pos-0]) ) ) continue;
-            bad=false;
-            fe(i, 0, pos){ // should not trigger if v[pos]==n
-                if (v[pos]==v[i]) {
-                    bad=true;
-                }
-            }
+	    if (status[v[pos]]) continue; // should not trigger if v[pos]==n
+	    break;
         }
 
         //cerr<<"    "<<v[pos]<<endl;
 
-        if (v[pos]==n) pos--;
-        else v[++pos]=-1;
+        if (v[pos]==n) {
+	       	pos--;
+	} else {
+		status[v[pos]]=true;
+		v[++pos]=-1;
+	}
     }
 
     cout<<cnt<<endl;
