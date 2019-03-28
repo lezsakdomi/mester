@@ -119,14 +119,14 @@ int main(){
         V utolsoJarat = jaratok[ut.back()];
         int most = utolsoJarat.hova;
         int ido = top.first;
-        fprintf(stderr, "> at %d on %d with %d\n", ido, most+1, utolsoJarat.id+1);
+        //fprintf(stderr, "> at %d on %d with %d\n", ido, most+1, utolsoJarat.id+1);
         if (most==b) {
-            fprintf(stderr, "DONE\n");
+            //fprintf(stderr, "DONE\n");
             break;
         }
         q.pop();
         if (touched[most]) {
-            fprintf(stderr, "SEEN\n");
+            //fprintf(stderr, "SEEN\n");
             continue;
         }
         touched[most]=true;
@@ -138,14 +138,14 @@ int main(){
             vector<int> v_=ut;
 
             //            nap       éjszakázunk?                                    járat indulása napon belül
-            int indulas = ido/NAP + (jaratIndulas </*TODO =?*/ ido%NAP ? NAP : 0) + jaratIndulas;
+            int indulas = ido/NAP*NAP + (jaratIndulas </*TODO =?*/ ido%NAP ? NAP : 0) + jaratIndulas;
             int erkezes = indulas + hossz + 60;
             v_.push_back(jaratId);
 
-            fprintf(stderr, ">>> to %d at %d-%d with %d\n", hova+1, indulas, erkezes, jaratId+1);
+            //fprintf(stderr, ">>> to %d at %d-%d with %d\n", hova+1, indulas, erkezes, jaratId+1);
 
             if (touched[hova]) {
-                fprintf(stderr, "    SEEN\n");
+                //fprintf(stderr, "    SEEN\n");
                 continue;
             }
 
