@@ -2,7 +2,7 @@ JAMSHELL = /bin/bash -c % ;
 CXX = g++ ;
 CFLAGS = -O0 -ggdb3 -DDEBUG ;
 CXXFLAGS = $(CFLAGS) --std=c++11 ;
-PROJECTS = abc_ladapakolas hanoi jarda1 jarda2 jarda3 korutak vonatok zart_polygon_keszitese szokereso dns_vizsgalat cso_vasarlas vizitura talalkozasok allatkertek alma arvizmentes arvizmentes_ atlo azonos_csoportok baratok csoportok duplavermes_vasut ekvivalens_csoportok etterem fogadas fogad_ baratok_ ismerosok ismerosok_ ido hideg_es_meleg_napok kozepso_eletkoru kodok ioival-vasutak ioival-halozatfelezes e16okt bolha hegy akadalyverseny ;
+PROJECTS = abc_ladapakolas hanoi jarda1 jarda2 jarda3 korutak vonatok zart_polygon_keszitese szokereso dns_vizsgalat cso_vasarlas vizitura talalkozasok allatkertek alma arvizmentes arvizmentes_ atlo azonos_csoportok baratok csoportok duplavermes_vasut ekvivalens_csoportok etterem fogadas fogad_ baratok_ ismerosok ismerosok_ ido hideg_es_meleg_napok kozepso_eletkoru kodok ioival-vasutak ioival-halozatfelezes e16okt bolha hegy akadalyverseny repulout ;
 
 rule Compile
 {
